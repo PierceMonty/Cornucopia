@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class LetterToNumConverter {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);		
+		double gradeNum = 0;
+		
+		
+		System.out.print("Enter your letter grade, with a + or -, if applicable:   ");
+		String gradeLet = input.nextLine(); 
+		
+		int length = gradeLet.length();
+		String subSign;
+
+		
+		String subLet = gradeLet.substring(0,1);
+		
+		
+		if (subLet.equals("A")) {
+			gradeNum = 4.0;
+		}
+		else if (subLet.equals("B")) {
+			gradeNum = 3.0;
+		}
+		else if (subLet.equals("C")) {
+			gradeNum = 2.0;
+		}
+		else if (subLet.equals("D")) {
+			gradeNum = 1.0;
+		}
+		else if (subLet.equals("F")){
+			gradeNum = 0.0;
+		}
+		
+		if (length > 1) {
+			subSign = gradeLet.substring(1,2);
+			if (subSign.equals("+"))
+				gradeNum = gradeNum + 0.3;
+			else
+				gradeNum = gradeNum - 0.3;
+		}
+		else 
+			subSign = gradeLet.substring(0,1);
+	
+		System.out.print("Your number grade is: ");
+		System.out.print(gradeNum);
+		
+	}
+
+}
