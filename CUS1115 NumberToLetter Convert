@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class NumToLetterConverter {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter a number grade, 0.00 - 4.0");
+		double gradeNum = input.nextDouble();
+		
+		double numInt = gradeNum / 1.00;
+		double numDec = gradeNum % 1;
+		
+		String gradeLet;
+		
+		if (gradeNum >= 3.5)
+			gradeLet = "A";
+		else if (gradeNum >= 2.5)
+			gradeLet = "B";
+		else if (gradeNum >= 1.5)
+			gradeLet = "C";
+		else if (gradeNum >= 0.5)
+			gradeLet = "D";
+		else
+			gradeLet = "F";
+		
+		
+		if ((numDec <= 0.5) && (numDec > 0.00))
+			gradeLet = gradeLet + "+";
+		else if ((numDec > 0.5) && (numDec < 1.00))
+			gradeLet = gradeLet + "-";
+		else;
+		
+		
+		//System.out.println(numInt);
+		//System.out.println(numDec);
+		System.out.print("Letter Conversion: ");
+		System.out.print(gradeLet);
+		
+	}
+
+}
