@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+
+public class InterestCalculator {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		double money, monthly1, monthly2, monthly3;
+				
+		System.out.print("Enter your starting amount: ");
+		money = input.nextInt();
+		
+		monthly1 = Math.pow(1 + 0.06, 1);
+		monthly1 = monthly1 * money;
+		
+		monthly2 = Math.pow(1 + 0.06, 2);
+		monthly2 = monthly2 * money;
+		
+		monthly3 = Math.pow(1 + 0.06, 3);
+		monthly3 = monthly3 * money;
+		
+		
+		
+		
+		System.out.printf("%s%5.2f", "Month 1: ", monthly1);
+		System.out.println("");
+		System.out.printf("%s%5.2f", "Month 2: ", monthly2);
+		System.out.println("");
+		System.out.printf("%s%5.2f", "Month 3: ", monthly3);
+		
+	}
+	
+
+
+}
