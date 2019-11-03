@@ -1,0 +1,104 @@
+import java.util.Scanner;
+
+public class CoinCounterMain {
+	public static void main(String[] args)
+	{
+		Scanner in = new Scanner(System.in);
+		
+		/**
+				editor notes
+				
+				I know the alleged 'correct' method of writing this would be to use the modulus, but
+				I did it another way, sue me. There is a system working here, which basically takes the total, and copies it to 
+				another variable, "totalChange". Total change is messed with, used to divide the amount of coin out, and then
+				set back to total once the amount is finished. The change is taken to the one's place, rounded, and then changed 
+				back into a hundredth place decimal. I thought I would need if's and and's if there wasn't a coin to be counted,
+				but the program runs, although the reasons are unclear. 
+				
+				Pierce Montgomery
+		**/
+		
+		//initialization 
+		double total, totalChange;
+		int dollarCount, quarterCount, dimeCount, nickelCount, pennyCount;
+		
+		//prompt user input
+		System.out.print("Enter a cash value, X.XX format: ");
+		total = in.nextDouble(); //testing purpose example is 7.76
+		//total = 7.93;
+		
+		
+		
+		//calculate dollar amount from total
+		dollarCount = (int)total; //totalHold is input number w/o decimal
+		totalChange = (double)dollarCount; //totalHold2 is the integer with zero to hundredth
+		totalChange = total - totalChange;//totalHold2 is the amount left over, after taking dollars away
+		
+		//rounds totalChange
+		totalChange = Math.round(totalChange * 100); //totalhold2 is rounded, after being x'd 100
+		totalChange = (totalChange / 100); //rounded totalhold2 is brought back to decimal place
+		
+		System.out.println("Beginning cash value: " + total);
+		System.out.println(" ");
+		System.out.println("Amount of dollars counted: " + dollarCount + " Dollars");
+		System.out.println("Remaining cents: " + totalChange);
+		
+				
+		//calculate quarter amount from change
+		total = totalChange; //the total becomes the amount left over 
+		totalChange = (total / 0.25); // totalChange removes quarters from new total
+		quarterCount = (int)totalChange; //quarterCount is total w/o decimal
+		totalChange = total - (quarterCount * 0.25); //change is the total, minus the amount of quarters * price
+		
+		//rounds totalChange
+		totalChange = Math.round(totalChange * 100); //rounds the change to hundredth
+		totalChange = (totalChange / 100);
+		
+		System.out.println(" ");
+		System.out.println("Amount of quarters Counted: " + quarterCount + " Quarters");
+		System.out.println("Remaining cents: " + totalChange);
+		
+		
+		//calculate dime amount
+		total = totalChange;
+		totalChange = (total / 0.10);
+		dimeCount = (int)totalChange;
+		totalChange = total - (dimeCount * 0.10);
+		
+		//rounds change
+		totalChange = Math.round(totalChange * 100);
+		totalChange = (totalChange / 100);
+		
+		System.out.println(" ");
+		System.out.println("Amount of dimes counted: " + dimeCount + " Dimes");
+		System.out.println("Remaining cents: " + totalChange);
+		
+		
+		//counts nickels
+		total = totalChange;
+		totalChange = (total / 0.05);
+		nickelCount = (int)totalChange;
+		totalChange = total - (nickelCount * 0.05);
+		
+		totalChange = Math.round(totalChange * 100);
+		totalChange = (totalChange / 100);
+		
+		System.out.println(" ");
+		System.out.println("Amount of nickels counted: " + nickelCount + " Nickels");
+		System.out.println("Remaining cents: " + totalChange);
+		
+		
+		//counts pennies
+		total = totalChange;
+		totalChange = (total / 0.01);
+		pennyCount = (int)totalChange;
+		
+		System.out.println(" ");
+		System.out.println("Amount of pennies counted: " + pennyCount + " Pennies");
+		System.out.println("Remaining cents: 0.00");
+		
+		
+		
+		
+	}
+}
