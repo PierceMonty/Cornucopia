@@ -1,0 +1,362 @@
+//Pierce Montgomery - Don't steal my project.
+
+import java.util.Scanner;
+
+public class Gradebookv2 {
+
+	public static void main(String[] args) {
+		
+		
+		//initialization
+		Scanner input = new Scanner(System.in);
+		
+		//average variables for classes
+		int cls1avg1, cls1avg2, cls1avg3;
+		int cls2avg1, cls2avg2, cls2avg3;
+		int cls3avg1, cls3avg2, cls3avg3;
+		int cls4avg1, cls4avg2, cls4avg3;
+		
+		double cls1avg, cls2avg, cls3avg, cls4avg;
+		
+		//strings for class name and letter grades
+		String cls1name;
+		String cls2name;
+		String cls3name;
+		String cls4name;
+		
+		String cls1Let;
+		String cls2Let;
+		String cls3Let;
+		String cls4Let;
+		
+		//cumulative gpa
+		double cls1GPA, cls2GPA, cls3GPA, cls4GPA;
+		
+		
+		//huge input process
+		//class 1
+		System.out.print("Enter class 1 name: ");
+		cls1name = input.nextLine();
+		System.out.print("Class average 1: ");
+		cls1avg1 = input.nextInt();
+		System.out.print("Class average 2: ");
+		cls1avg2 = input.nextInt();
+		System.out.print("Class average 3: ");
+		cls1avg3 = input.nextInt();
+		
+		//class 2
+		input.nextLine();
+		System.out.print("Enter class 2 name: ");
+		cls2name = input.nextLine();
+		System.out.print("Class average 1: ");
+		cls2avg1 = input.nextInt();
+		System.out.print("Class average 2: ");
+		cls2avg2 = input.nextInt();
+		System.out.print("Class average 3: ");
+		cls2avg3 = input.nextInt();
+		
+		//class 3
+		input.nextLine();
+		System.out.print("Enter class 3 name: ");
+		cls3name = input.nextLine();
+		System.out.print("Class average 1: ");
+		cls3avg1 = input.nextInt();
+		System.out.print("Class average 2: ");
+		cls3avg2 = input.nextInt();
+		System.out.print("Class average 3: ");
+		cls3avg3 = input.nextInt();
+		
+		//class 4
+		input.nextLine();
+		System.out.print("Enter class 4 name: ");
+		cls4name = input.nextLine();
+		System.out.print("Class average 1: ");
+		cls4avg1 = input.nextInt();
+		System.out.print("Class average 2: ");
+		cls4avg2 = input.nextInt();
+		System.out.print("Class average 3: ");
+		cls4avg3 = input.nextInt();
+		
+		 
+		//final average calculator
+		cls1avg = (cls1avg1 + cls1avg2 + cls1avg3) / 3;
+		cls2avg = (cls2avg1 + cls2avg2 + cls2avg3) / 3;
+		cls3avg = (cls3avg1 + cls3avg2 + cls3avg3) / 3;
+		cls4avg = (cls4avg1 + cls4avg2 + cls4avg3) / 3;
+
+		
+		
+		
+		//If statements, repeated four times
+		//seperates the GPA and letter grade from the average. 
+		//one for each course.
+		
+		//90 and up group
+		if (cls1avg >= 90) {
+			if (cls1avg <= 93) {
+				cls1Let = "A-";
+				cls1GPA = 3.7;
+			}
+			else {
+				cls1Let = "A";
+				cls1GPA = 4.0;
+			}
+		}
+		//80 group
+		else if (cls1avg >= 80) {
+			if (cls1avg >= 87) {
+				cls1Let = "B+";
+				cls1GPA = 3.3;
+			}
+			else if (cls1avg <= 83) {
+				cls1Let = "B-";
+				cls1GPA = 2.7;
+			}
+			else {
+				cls1Let = "B";
+				cls1GPA = 3.0;
+			}
+		}
+		//70 group
+		else if (cls1avg >= 70) {
+			if (cls1avg >= 77) {
+				cls1Let = "C+";
+				cls1GPA = 2.3;
+			}
+			else if (cls1avg <= 73) {
+				cls1Let = "C-";
+				cls1GPA = 1.7;
+			}
+			else {
+				cls1Let = "C";
+				cls1GPA = 2.0;
+			}
+		}
+		//60 group
+		else if (cls1avg >= 60) {
+			if (cls1avg >= 67) {
+				cls1Let = "D+";
+				cls1GPA = 1.3;
+			}
+			else {
+				cls1Let = "D";
+				cls1GPA = 1.0;
+			}
+		}
+		else {
+			cls1Let = "F";
+			cls1GPA = 0.0;
+		}
+		
+		
+		//CLASS 2
+		//
+		//using this to space out code and make clearer
+		//:)
+		
+		
+		//90 up group
+		if (cls2avg >= 90) {
+			if (cls2avg <= 93) {
+				cls2Let = "A-";
+				cls2GPA = 3.7;
+			}
+			else {
+				cls2Let = "A";
+				cls2GPA = 4.0;
+			}
+		}
+		//80 group
+		else if (cls2avg >= 80) {
+			if (cls2avg >= 87) {
+				cls2Let = "B+";
+				cls2GPA = 3.3;
+			}
+			else if (cls2avg <= 83) {
+				cls2Let = "B-";
+				cls2GPA = 2.7;
+			}
+			else {
+				cls2Let = "B";
+				cls2GPA = 3.0;
+			}
+		}
+		//70 group
+		else if (cls2avg >= 70) {
+			if (cls2avg >= 77) {
+				cls2Let = "C+";
+				cls2GPA = 2.3;
+			}
+			else if (cls2avg <= 73) {
+				cls2Let = "C-";
+				cls2GPA = 1.7;
+			}
+			else {
+				cls2Let = "C";
+				cls2GPA = 2.0;
+			}
+		}
+		//60 group
+		else if (cls2avg >= 60) {
+			if (cls2avg >= 67) {
+				cls2Let = "D+";
+				cls2GPA = 1.3;
+			}
+			else {
+				cls2Let = "D";
+				cls2GPA = 1.0;
+			}
+		}
+		else {
+			cls2Let = "F";
+			cls2GPA = 0.0;
+		}
+		
+		
+		//CLASS 3
+		//
+		// :/
+		
+
+		
+		//90 up group
+		if (cls3avg >= 90) {
+			if (cls3avg <= 93) {
+				cls3Let = "A-";
+				cls3GPA = 3.7;
+			}
+			else {
+				cls3Let = "A";
+				cls3GPA = 4.0;
+			}
+		}
+		//80 group
+		else if (cls3avg >= 80) {
+			if (cls3avg >= 87) {
+				cls3Let = "B+";
+				cls3GPA = 3.3;
+			}
+			else if (cls3avg <= 83) {
+				cls3Let = "B-";
+				cls3GPA = 2.7;
+			}
+			else {
+				cls3Let = "B";
+				cls3GPA = 3.0;
+			}
+		}
+		//70 group
+		else if (cls3avg >= 70) {
+			if (cls3avg >= 77) {
+				cls3Let = "C+";
+				cls3GPA = 2.3;
+			}
+			else if (cls3avg <= 73) {
+				cls3Let = "C-";
+				cls3GPA = 1.7;
+			}
+			else {
+				cls3Let = "C";
+				cls3GPA = 2.0;
+			}
+		}
+		//60 group
+		else if (cls3avg >= 60) {
+			if (cls3avg >= 67) {
+				cls3Let = "D+";
+				cls3GPA = 1.3;
+			}
+			else {
+				cls3Let = "D";
+				cls3GPA = 1.0;
+			}
+		}
+		else {
+			cls3Let = "F";
+			cls3GPA = 0.0;
+		}
+		
+		
+		//CLASS 4
+		//
+		//
+		
+
+		
+		//90 up group
+		if (cls4avg >= 90) {
+			if (cls4avg <= 93) {
+				cls4Let = "A-";
+				cls4GPA = 3.7;
+			}
+			else {
+				cls4Let = "A";
+				cls4GPA = 4.0;
+			}
+		}
+		//80 group
+		else if (cls4avg >= 80) {
+			if (cls4avg >= 87) {
+				cls4Let = "B+";
+				cls4GPA = 3.3;
+			}
+			else if (cls4avg <= 83) {
+				cls4Let = "B-";
+				cls4GPA = 2.7;
+			}
+			else {
+				cls4Let = "B";
+				cls4GPA = 3.0;
+			}
+		}
+		//70 group
+		else if (cls4avg >= 70) {
+			if (cls4avg >= 77) {
+				cls4Let = "C+";
+				cls4GPA = 2.3;
+			}
+			else if (cls4avg <= 73) {
+				cls4Let = "C-";
+				cls4GPA = 1.7;
+			}
+			else {
+				cls4Let = "C";
+				cls4GPA = 2.0;
+			}
+		}
+		//60 group
+		else if (cls4avg >= 60) {
+			if (cls4avg >= 67) {
+				cls4Let = "D+";
+				cls4GPA = 1.3;
+			}
+			else {
+				cls4Let = "D";
+				cls4GPA = 1.0;
+			}
+		}
+		else {
+			cls4Let = "F";
+			cls4GPA = 0.0;
+		}
+		
+		//printf class format
+		String formatter = "%n%-12s%-13.2f%-18s%-6.3s";
+		
+		//spacing and list parameters
+		System.out.println();
+		System.out.println();
+		System.out.printf("%s%13s%18s%17s", "Course", "Average", "Letter Grade", "Grade Point");
+		
+		//final class scores print
+		System.out.println();
+		System.out.printf(formatter, cls1name, cls1avg, cls1Let, cls1GPA);
+		System.out.printf(formatter, cls2name, cls2avg, cls2Let, cls2GPA);
+		System.out.printf(formatter, cls3name, cls3avg, cls3Let, cls3GPA);
+		System.out.printf(formatter, cls4name, cls4avg, cls4Let, cls4GPA);
+		
+		
+		
+	}
+
+}
