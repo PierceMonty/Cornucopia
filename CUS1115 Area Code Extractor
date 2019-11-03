@@ -1,0 +1,25 @@
+import java.util.Scanner; 
+
+public class AreaCodeExtractor {
+		public static void main(String[] args) {
+			Scanner input = new Scanner(System.in);
+			
+			int areaCode, num;
+			String num1, num2, num3;
+			
+			System.out.print("Enter your area code: ");
+			areaCode = input.nextInt();
+			System.out.print("Enter your phone number (NO SPACES): ");
+			num = input.nextInt();
+			
+			String numHold = Integer.toString(areaCode);
+			String number = numHold + num; 
+			
+			num1 = number.substring(0, 3);
+			num2 = number.substring(3, 6);
+			num3 = number.substring(6, 10);
+			
+			System.out.println("Phone Number: ");
+			System.out.print("(" + num1 + ")" +  " " + num2 + "-" + num3);
+		}
+}
